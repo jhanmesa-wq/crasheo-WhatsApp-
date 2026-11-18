@@ -9,7 +9,7 @@ module.exports = {
     
     group: 'https://t.me/+eWVo-SSnQpYyNWJh', // TG group link
     
-    bot: 'SPECTER DATA BUG', // Bot name 
+    bot: 'SPECTER BUG', // Bot name 
     
     logo: './SY/Loves.jpg' // Bot logo path or URL
 };
