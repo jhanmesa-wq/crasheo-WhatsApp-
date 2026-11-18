@@ -5,11 +5,11 @@ module.exports = {
     S7: 'ALI HERE BUG', // Owner, Name
     
     adminId: '8271623149', // Owner Chat ID ( control /address, /delresell 
-    channel: '', // TG channel link
+    channel: 'https://t.me/gatito_444', // TG channel link
     
     group: 'https://t.me/+eWVo-SSnQpYyNWJh', // TG group link
     
-    bot: 'ALI HERE BUG', // Bot name 
+    bot: 'SPECTER DATA BUG', // Bot name 
     
     logo: './SY/Loves.jpg' // Bot logo path or URL
 };
