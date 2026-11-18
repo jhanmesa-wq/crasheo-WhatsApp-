@@ -1,6 +1,6 @@
 
 module.exports = {
-    mainToken: process.env.mainToken || '', // Bot Token Here// Bot Token Here 
+    mainToken: process.env.mainToken || '9246549807:AAE9A_DiiEGF53Hf7E8bnqnTWshtPlvOrWc', // Bot Token Here// Bot Token Here 
     
     S7: 'ALI HERE BUG', // Owner, Name
     
