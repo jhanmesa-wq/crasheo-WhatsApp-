@@ -312,7 +312,7 @@ function MainSYLoVe(name, uptime, love) {
 }
 
 function BvgSYLoVe(cleanTarget) {
-    return `┏━━━━━━〣 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗧𝗜𝗢𝗡 〣━━━━━━━┓\n┃ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...\n┃ ᴛʜᴇ ʙᴏᴛ ɪs ᴄᴜʀʀᴇɴᴛʟʏ sᴇɴᴅɪɴɢ ʙᴜɢ \n┃ Tᴀʀɢᴇᴛ : ${cleanTarget}\n┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`;
+    return `┏━━━━━〣 𝗡𝗢𝗧𝗜𝗙𝗜𝗖𝗔𝗧𝗜𝗢𝗡 〣━━━━━━┓\n┃ ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...\n┃ ᴛʜᴇ ʙᴏᴛ ɪs ᴄᴜʀʀᴇɴᴛʟʏ sᴇɴᴅɪɴɢ ʙᴜɢ \n┃ Tᴀʀɢᴇᴛ : ${cleanTarget}\n┗━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`;
 }
 
 // ==================== START BOT ====================
@@ -376,15 +376,15 @@ function startSYloveBot(token) {
             const love = msg.from.id.toString();
 
             const captionText = MainSYLoVe(name, uptime, love) + `
-┌──────┤ Press Button Menu ├──────┐
+┌─────┤ Press Button Menu ├─────┐
 └────────────────────────┘`;
 
             const menuButtons = {
                 reply_markup: {
                     inline_keyboard: [
-                        [{ text: 'I|  Bug Menu', callback_data: 'bug_menu' }, { text: 'I|  Misc Menu', callback_data: 'misc_menu' }],
-                        [{ text: 'I|  Channel ↗', url: `${config.channel}` }],
-                        [{ text: 'I|  Group ↗', url: `${config.group}` }]
+                        [{ text: 'I|  bug Menu', callback_data: 'bug_menu' }, { text: 'I|  Misc Menu', callback_data: 'misc_menu' }],
+                        [{ text: 'I|  Canal ↗', url: `${config.channel}` }],
+                        [{ text: 'I|  Grupo ↗', url: `${config.group}` }]
                     ]
                 }
             };
@@ -414,7 +414,7 @@ function startSYloveBot(token) {
             // Main Menu
             if (data === 'main_menu') {
                 const mainText = MainSYLoVe(name, uptime, userId) + `
-┌──────┤ Press Button Menu ├──────┐
+┌─────┤ Press Button Menu ├─────┐
 └────────────────────────┘`;
 
                 await S7.editMessageCaption(mainText, {
@@ -434,7 +434,7 @@ function startSYloveBot(token) {
             else if (data === 'bug_menu') {
                 const bugText = MainSYLoVe(name, uptime, userId) + `
 ┌──────┤ BUG MENU ├──────┐
-│ Select your platform
+│ ELIJE TU PLATAFORMA 
 └──────────────────────┘`;
 
                 await S7.editMessageCaption(bugText, {
@@ -443,9 +443,9 @@ function startSYloveBot(token) {
                     reply_markup: {
                         inline_keyboard: [
                             [{ text: 'I| 𝖠𝗇𝖽𝗋𝗈𝗂𝖽 𝖡𝗎𝗀𝗌', callback_data: 'android_menu' }],
-                            [{ text: 'I| 𝖨𝗈𝗌 𝖡𝗎𝗀𝗌', callback_data: 'ios_menu' }],
-                            [{ text: 'I| 𝖦𝗋𝗈𝗎𝗉 𝖡𝗎𝗀𝗌', callback_data: 'group_menu' }],
-                            [{ text: 'I| 𝖡𝖺𝖼𝗄 𝗍𝗈 𝖬𝖺𝗂𝗇', callback_data: 'main_menu' }]
+                            [{ text: 'I| IOS 𝖡𝗎𝗀𝗌', callback_data: 'ios_menu' }],
+                            [{ text: 'I| 𝖦𝗋upo 𝖡𝗎𝗀𝗌', callback_data: 'group_menu' }],
+                            [{ text: 'I| VOLVER', callback_data: 'main_menu' }]
                         ]
                     }
                 });
@@ -455,17 +455,17 @@ function startSYloveBot(token) {
             else if (data === 'android_menu') {
                 const androidText = MainSYLoVe(name, uptime, userId) + `
 ┌──────┤ 𝖠𝖭𝖣𝖱𝖮𝖨𝖣 𝖡𝖴𝖦𝖲 ├──────┐
-│➻ /crashjam [num] [hours]
-│➻ /trashsystem [num] [hours]
-│➻ /crashdroid [num] [hours]
-│➻ /killsystem [num] [hours]
+│➻ /crashjam [num] [horaa]
+│➻ /trashsystem [num] [horas]
+│➻ /crashdroid [num] [horas]
+│➻ /killsystem [num] [horas]
 │➻ /forceblock [num] [amount]
 │➻ /xbetainvis [num]
-│➻ /delaymaker [num] [hours]
-│➻ /delayxceed [num] [hours]
-│➻ /absolutedelay [num] [hours]
-│➻ /xdelayinvis [num] [hours]
-│➻ /nullfinity [num] [hours]
+│➻ /delaymaker [num] [horas]
+│➻ /delayxceed [num] [horas]
+│➻ /absolutedelay [num] [horas]
+│➻ /xdelayinvis [num] [horas]
+│➻ /nullfinity [num] [horas]
 │➻ /crashfinity [num]
 └──────────────────────┘`;
 
@@ -474,7 +474,7 @@ function startSYloveBot(token) {
                     message_id: messageId,
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: '◀️ 𝖡𝖺𝖼𝗄 𝗍𝗈 𝖡𝗎𝗀 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
+                            [{ text: '◀️ Volver 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
                         ]
                     }
                 });
@@ -484,8 +484,8 @@ function startSYloveBot(token) {
             else if (data === 'ios_menu') {
                 const iosText = MainSYLoVe(name, uptime, userId) + `
 ┌──────┤ 𝖨𝖮𝖲 𝖡𝖴𝖦𝖲 ├──────┐
-│➻ /hidenseek [num] [hours]
-│➻ /iosinvisible [num] [hours]
+│➻ /hidenseek [num] [horas]
+│➻ /iosinvisible [num] [horas]
 │➻ /iosvisible [num] [hours]
 └──────────────────────┘`;
 
@@ -494,7 +494,7 @@ function startSYloveBot(token) {
                     message_id: messageId,
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: '◀️ 𝖡𝖺𝖼𝗄 𝗍𝗈 𝖡𝗎𝗀 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
+                            [{ text: '◀️ volver 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
                         ]
                     }
                 });
@@ -504,16 +504,16 @@ function startSYloveBot(token) {
             else if (data === 'group_menu') {
                 const groupText = MainSYLoVe(name, uptime, userId) + `
 ┌──────┤ 𝖦𝖱𝖮𝖴𝖯 𝖡𝖴𝖦𝖲 ├──────┐
-│➻ /trashsysgp [group_id] [hours]
-│➻ /xgroup [group_id] [hours]
-│➻ /killgc [group_id] [hours]
-│➻ /groupfriz [group_id] [hours]
-│➻ /groupui [group_id] [hours]
-│➻ /nullgc [group_id] [hours]
-│➻ /groupfinity [group_id] [hours]
-│➻ /autoclosegc [group_id] [hours]
-│➻ /groupmix [group_id] [hours]
-│➻ /forcegroup [group_id] [amount]
+│➻ /trashsysgp [grupo_id] [horas]
+│➻ /xgroup [grupo_id] [horas]
+│➻ /killgc [grupo_id] [horas]
+│➻ /groupfriz [grupo_id] [horas]
+│➻ /groupui [grupo_id] [horas]
+│➻ /nullgc [grupo_id] [horas]
+│➻ /groupfinity [grupo_id] [horas]
+│➻ /autoclosegc [grupo_id] [horas]
+│➻ /groupmix [grupo_id] [horas]
+│➻ /forcegroup [grupo_id] [amount]
 │➻ /listgc
 │➻ /groupid [link]
 └──────────────────────┘`;
@@ -523,7 +523,7 @@ function startSYloveBot(token) {
                     message_id: messageId,
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: '◀️ 𝖡𝖺𝖼𝗄 𝗍𝗈 𝖡𝗎𝗀 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
+                            [{ text: '◀️ volver 𝖬𝖾𝗇𝗎', callback_data: 'bug_menu' }]
                         ]
                     }
                 });
@@ -554,7 +554,7 @@ function startSYloveBot(token) {
                     message_id: messageId,
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: '◀️ 𝖡𝖺𝖼𝗄 𝗍𝗈 𝖬𝖺𝗂𝗇', callback_data: 'main_menu' }]
+                            [{ text: '◀️ volver ', callback_data: 'main_menu' }]
                         ]
                     }
                 });
@@ -1188,10 +1188,10 @@ function startSYloveBot(token) {
             }
 
             if (!waSessions || Object.keys(waSessions).length === 0) {
-                return S7.sendMessage(chatId, '❌ No Number connected please use /reqpair to connect');
+                return S7.sendMessage(chatId, '❌ Número no conectado por favor use /reqpair se conecte');
             }
 
-            let text = `⬣ <b>LIST OF WHATSAPP GROUPS</b>\n\n`;
+            let text = `⬣ <b>LISTA  WHATSAPP GRUPOD</b>\n\n`;
             let totalGroups = 0;
             let index = 1;
 
@@ -1206,16 +1206,16 @@ function startSYloveBot(token) {
 
                         if (groups.length === 0) continue;
 
-                        text += `📱 <b>Number:</b> <code>${num}</code>\n`;
+                        text += `📱 <b>NÚMERO:</b> <code>${num}</code>\n`;
                         text += `━━━━━━━━━━━━━━━\n`;
 
                         for (const group of groups) {
                             const meta = await sock.groupMetadata(group.id);
 
-                            text += `❏ Group ${index++}\n`;
-                            text += `│⭔ <b>Name:</b> ${meta.subject}\n`;
+                            text += `❏ Grupo${index++}\n`;
+                            text += `│⭔ <b>Nombre:</b> ${meta.subject}\n`;
                             text += `│⭔ <b>ID:</b> <code>${meta.id}</code>\n`;
-                            text += `│⭔ <b>Members:</b> ${meta.participants.length}\n`;
+                            text += `│⭔ <b>Miembros:</b> ${meta.participants.length}\n`;
                             text += `╰──────────────\n\n`;
 
                             totalGroups++;
@@ -1227,11 +1227,11 @@ function startSYloveBot(token) {
             }
 
             if (totalGroups === 0) {
-                return S7.sendMessage(chatId, '❌ No groups found on connected numbers.');
+                return S7.sendMessage(chatId, '❌ No grupos');
             }
 
             text =
-                `⬣ <b>LIST OF GROUP BELOW</b>\n\n` +
+                `⬣ <b>LISTA DE GRUPOS</b>\n\n` +
                 `📦 <b>Total Groups:</b> ${totalGroups}\n\n` +
                 text;
 
@@ -1257,7 +1257,7 @@ function startSYloveBot(token) {
             const client = session.sock;
 
             if (!link || !link.includes('chat.whatsapp.com/')) {
-                return S7.sendMessage(chatId, `❌ Usage: /groupid [Group Link]\nExample: /groupid https://chat.whatsapp.com/Kzj...`);
+                return S7.sendMessage(chatId, `❌ Use: /groupid [Group Link]\nEjemplo: /groupid https://chat.whatsapp.com/Kzj...`);
             }
 
             try {
@@ -1265,14 +1265,14 @@ function startSYloveBot(token) {
                 await S7.sendMessage(chatId, '🔍 <b>Scanning Link...</b>', { parse_mode: 'HTML' });
                 const groupInfo = await client.groupGetInviteInfo(code);
                 const text = 
-                    `🆔 <b>GROUP ID FOUND</b>\n` +
+                    `🆔 <b>GRUPO ID</b>\n` +
                     `────────────────────\n` +
-                    `📌 <b>Name:</b> ${groupInfo.subject}\n` +
+                    `📌 <b>Nombre:</b> ${groupInfo.subject}\n` +
                     `🔑 <b>ID:</b> <code>${groupInfo.id}</code>\n` +
                     `👑 <b>Owner:</b> <code>${groupInfo.owner || 'Unknown'}</code>\n` +
                     `👥 <b>Size:</b> ${groupInfo.size || 'Unknown'}\n` +
                     `────────────────────\n` +
-                    `<i>Click the ID to copy</i>`;
+                    `<i>Click en ID para copiar</i>`;
                 await S7.sendMessage(chatId, text, { parse_mode: 'HTML' });
             } catch (err) {
                 log('error', 'groupid', err.message);
