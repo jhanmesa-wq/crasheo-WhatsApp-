@@ -5,7 +5,22 @@ const path = require('path');
 const config = require('./config');
 const { default: makeWASocket, useMultiFileAuthState, delay, DisconnectReason, makeCacheableSignalKeyStore } = require('@whiskeysockets/baileys');
 const pino = require('pino');
+const PORT = process.env.PORT || 3000;
 
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {
+        'Content-Type': 'application/json'
+    });
+
+    res.end(JSON.stringify({
+        status: 'online',
+        service: 'WhatsApp Bot'
+    }));
+});
+
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`HTTP server running on port ${PORT}`);
+});
 console.clear();
 
 // --- GLOBAL ERROR HANDLING ---
